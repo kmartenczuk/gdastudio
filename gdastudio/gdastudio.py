@@ -60,14 +60,15 @@ class SQLServer:
         self.password = password
 
 class SQLSelect:
-    def __init__(self, SQLConnection, SQLTable, Count, IndexOrderBy) -> object:
+    def __init__(self, SQLConnection, SQLTable, Count, IndexOrderBy, ASCmode) -> object:
         self.conn = SQLConnection
         self.cursor = self.conn.cursor()
         self.table = SQLTable
         self.count = Count
         self.index = IndexOrderBy
+        self.ascmode = ASCmode
         self.cursor.execute(
-            "Select * from " + self.table.schema + "." + self.table.name + " ORDER BY " +self.index+" FETCH FIRST " + self.count + " ROWS ONLY")
+            "Select * from " + self.table.schema + "." + self.table.name + " ORDER BY " +self.index+" "+self.ascmode+" FETCH FIRST " + self.count + " ROWS ONLY")
         self.data = self.cursor.fetchall()
 
 class SQLTable:

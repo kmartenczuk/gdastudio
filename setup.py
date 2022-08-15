@@ -3,7 +3,7 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-VERSION = '1.0.5'
+VERSION = '1.0.7'
 DESCRIPTION = 'ZALANDO GDA SQL Server, PGSQL,CSV & JSON Connection Objects and Tools'
 
 # Setting up
